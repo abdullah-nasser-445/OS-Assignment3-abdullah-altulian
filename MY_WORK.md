@@ -32,17 +32,17 @@
 
 | Field | Your Answer |
 |-------|-------------|
-| **Full Name** | [Write your full name here] |
-| **Student ID** | [Write your student ID here] |
-| **University Email** | [yourid]@std.psau.edu.sa |
-| **GitHub Username** | [your-github-username] |
-| **Repository Link** | [Paste your repository link here] |
+| **Full Name** | [ABDULLAH NASSER ALTULIAN] |
+| **Student ID** | [445050084] |
+| **University Email** | [445050084@std.psau.edu.sa |
+| **GitHub Username** | [abdullah-nasser-445] |
+| **Repository Link** | [https://github.com/abdullah-nasser-445/OS-Assignment3-abdullah-altulian.git] |
  
 ---
 
 ## 🎥 Video Link
 
-**Video Link**: [Paste your video link here]
+**Video Link**: [https://youtu.be/mk0fmbCpuV8?si=CzeabAzXb63DJ2St]
 
 > ⚠️ **WARNING:** The video must be **publicly accessible** ("Anyone with the link can view") on **Google Drive**, **YouTube (Unlisted or Public)** or any other cloud file-sharing system. A private, restricted or broken link counts as a **missing video (-1 mark)**.
 >
@@ -132,68 +132,68 @@
 
 ## Your Development Log
 
-### Entry 1 - [Date and Time]
-**What I did**:
+### Entry 1 - [2026-11-10 10:00 AM]
+**What I did**: nitiated the CPU Scheduler simulation project and set up the core architecture.
 
-**Details**:
+**Details**: Created the base code structure, defined main classes, and set up the main method to generate processes randomly using the student ID as a Seed to ensure reproducibility.
 
-**Challenges**:
+**Challenges**: Determining how to organize process flow and distribute time quantums fairly and systematically.
 
-**Solution**:
+**Solution**: Adopted the Round Robin algorithm and linked the process ready queue using LinkedList and Threads.
 
-**Time spent**:
-
----
-
-### Entry 2 - [Date and Time]
-**What I did**:
-
-**Details**:
-
-**Challenges**:
-
-**Solution**:
-
-**Time spent**:
+**Time spent**: 2 hours
 
 ---
 
-### Entry 3 - [Date and Time]
-**What I did**:
+### Entry 2 - [2026-11-11 2:00 PM]
+**What I did**: Developed the Process class and implemented the process lifecycle.
 
-**Details**:
+**Details**: Implemented the Runnable interface so that each process runs within an independent thread, handling total burst time, time quantum, and priority.
 
-**Challenges**:
+**Challenges**: Tracking the remaining time for each process during execution and ensuring smooth transitions between the CPU and the queue.
 
-**Solution**:
+**Solution**: Used Math.min to compare the time quantum with the remaining time and updated progress dynamically.
 
-**Time spent**:
-
----
-
-### Entry 4 - [Date and Time]
-**What I did**:
-
-**Details**:
-
-**Challenges**:
-
-**Solution**:
-
-**Time spent**:
+**Time spent**: 2 hours
 
 ---
 
-### Entry 5 - [Date and Time]
-**What I did**:
+### Entry 3 - [2026-11-12 4:00 PM]
+**What I did**: Implemented synchronization mechanisms and protected shared resources.
 
-**Details**:
+**Details**: Added a BinarySemaphore to control process access to the CPU (Mutual Exclusion), and applied Fine-grained Locking using ReentrantLock with independent locks for counters and logs.
 
-**Challenges**:
+**Challenges**: Preventing data corruption (Race Conditions) and avoiding system freezes (Deadlocks) while updating variables concurrently.
 
-**Solution**:
+**Solution**: Separated locks for each individual counter (Context Switches, Waiting Time, Logs) and utilized finally blocks to guarantee semaphore release under all circumstances.
 
-**Time spent**:
+**Time spent**: 3 hours
+
+---
+
+### Entry 4 - [2026-11-13 8:00 PM]
+**What I did**: Designed the Terminal UI and implemented performance optimizations.
+
+**Details**: Integrated ANSI color codes for enhanced readability, programmed a live-updating progress bar, and added an optimization condition for the final remaining process (runToCompletion).
+
+**Challenges**: Formatting the terminal output to look professional, clean, and easily understandable during the presentation.
+
+**Solution**: Built helper methods for printing formatted tables, headers, and visual progress bars, alongside a comprehensive final statistics report.
+
+**Time spent**: 2 hours
+
+---
+
+### Entry 5 - [2026-11-14 1:00 PM]
+**What I did**: Performed final code polishing, prepared repository documentation, and committed the project to GitHub.
+
+**Details**: Cleaned up the terminal UI formatting, updated the README.md file with repository details and student info, verified full program execution, and pushed the final changes.
+
+**Challenges**: Ensuring the terminal UI layout and ANSI colors rendered cleanly without any visual errors before the presentation.
+
+**Solution**: Conducted a final test run in the IDE terminal to verify output alignment, progress bar rendering, and statistics summary tables.
+
+**Time spent**: 2 hours
 
 ---
 
@@ -240,7 +240,7 @@
 
 **Your Answer:** *(5-7 sentences)*
 
-[Write your answer here.]
+[I learned how to prevent race conditions in critical sections using strict mutual exclusion. Using ReentrantLock with try/finally ensures safe lock release, while a binary semaphore (cpuSemaphore) controls CPU access. Fine-grained locking with independent counters successfully prevented bottlenecks and boosted concurrency.]
 
 ## Question 2: What was the most challenging part of this assignment?
 
@@ -248,7 +248,7 @@
 
 **Your Answer:** *(5-7 sentences)*
 
-[Write your answer here.]
+[The most challenging part was choosing the right lock granularity. Moving from a simple coarse-grained lock to fine-grained locking required carefully assigning independent ReentrantLock instances for each counter to prevent performance bottlenecks, while avoiding race conditions and deadlocks across critical sections.]
 
 ## Question 3: How did you overcome the challenges you faced?
 
@@ -256,7 +256,7 @@
 
 **Your Answer:** *(5-7 sentences)*
 
-[Write your answer here.]
+[To overcome these challenges, I adopted a systematic and iterative testing approach. I carefully reviewed course slides and official Java concurrency documentation to better understand lock granularity and thread synchronization. Throughout the debugging process, I strategically added print statements and execution logs to trace thread behavior and state transitions. I tested the program repeatedly after each small change to ensure that thread safety was maintained without introducing deadlocks. Re-reading the project README and requirements also helped clarify expected behaviors and edge cases. This step-by-step methodology allowed me to isolate issues quickly and build a robust, highly concurrent scheduler simulation.]
 
 ## Question 4: Where can synchronization concepts be applied in real-world applications?
 
@@ -264,7 +264,7 @@
 
 **Your Answer:** *(5-7 sentences)*
 
-[Write your answer here.]
+[Synchronization concepts are widely applied in real-world systems like online banking and seat booking platforms where multiple concurrent users access shared resources. For instance, in banking and money transfers, account balances serve as shared data that require strict mutual exclusion within critical sections to prevent race conditions. Just like we used locks in our scheduler, financial systems rely on synchronization to ensure transaction consistency. Similarly, in ticket or seat booking websites, concurrent users trying to select the same seat represent competing threads accessing shared inventory. Applying locks or semaphores prevents double-booking by serializing access to the reservation record. Ultimately, these core concurrency principles are essential across many domains, from print queues to large-scale databases.]
 
 ### Optional: What would you like to learn more about?
 
@@ -358,13 +358,13 @@ Verification block of **my final version**:
 ## Summary
 
 **Key concepts I understood through these questions:**
-1.
-2.
-3.
+1. Implementing strict mutual exclusion and thread synchronization using BinarySemaphore and ReentrantLock.
+2. The operational trade-offs of lock granularity—specifically how moving from coarse-grained to fine-grained locking eliminates performance bottlenecks and prevents race conditions.
+3. Ensuring reliable resource cleanup and thread safety with try/finally blocks, alongside achieving deterministic simulation outcomes via reproducible seeds.
 
 **Concepts I need to study more:**
-1.
-2.
+1. Advanced deadlock handling, detection, and avoidance algorithms (such as the Banker's Algorithm or resource-allocation graphs).
+2. The performance overhead and scalability differences between traditional lock-based synchronization and lock-free concurrent data structures in high-throughput systems.
 
 ---
 
